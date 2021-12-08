@@ -26,6 +26,11 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * The method is called when the user clicks the "Add Task" button.
+   * The custom event is emitted to the tasks.component.html.
+   * @returns void
+   */
   onSubmit() {
     if (!this.text || !this.day) {
       alert('Please fill all fields');

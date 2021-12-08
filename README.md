@@ -1,28 +1,27 @@
-# AngularCrash
+# Overview
+The application is the practice of to-do app lists using Angular. It is initially created by [Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&ab_channel=TraversyMedia). The purpose of the repository is to familiarize the basics of Angular, such as:
+1. Typescript with class instances component.
+2. Passing properties to the child component.
+3. Basic framework shorthand form directive: *ngIf, *ngFor="[let item in items]" syntax.
+4. Basic routing.
+5. Basic HTTP request, response with `HttpClient` module in any kind of `services`; the `Observable` and the `Subscription` pattern to handle the response.
+6. Basic custom event handling with `EventEmitter` and `Output` in the `component`, and how the event is passed and dealt with parent component with `services`.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Overall, the repository adds the comments if the code includes the concepts of Angular under each component. The gentle explanations and references are for the Angular beignners to understand and track the code. Extra implementations will focus on the unit-testing into three sections:
+- the class behaviors
+- the DOM rendering
+- the routing test which ensure the correct routing path directing to the expected component.
 
-## Development server
+# Testing
+- to run a unit test on a specific component, for example, `ng -include src/app/components/about/about.component.spec.ts`.
+- the test mentioned above is implemented as an example of the unit test.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# Angular-basics-todoApp
+# Plan
+- to implement more unit tests.
+- [x] about
+- [ ] add-task
+- [ ] button
+- [ ] footer
+- [ ] header
+- [ ] task-item
+- [ ] tasks

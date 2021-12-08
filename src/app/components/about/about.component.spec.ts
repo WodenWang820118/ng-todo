@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TasksComponent } from '../tasks/tasks.component';
 import { appRoutes } from 'src/app/app.module';
-
 import { AboutComponent } from './about.component';
 
 describe('AboutComponent', () => {
