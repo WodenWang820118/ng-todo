@@ -1,0 +1,16 @@
+<!-- loop through the app-task-item component with a property task -->
+<app-add-task
+(onAddTask)="addTask($event)"
+>
+</app-add-task>
+<!-- assign the [task] property with task and pass it down to the task-item -->
+<!-- the entire project is pass down to the task-item, which could be rendering through task-item -->
+<!-- however, to complete the registration, it's mandatory to @input the task property to the task-item.ts -->
+<app-task-item 
+    *ngFor="let task of tasks"
+    [task]="task"
+    (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)"
+    >
+    
+</app-task-item>
