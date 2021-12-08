@@ -9,15 +9,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
-  text?: string;
-  day: string;
+  text!: string;
+  day!: string;
   reminder: boolean = false;
   showAddTask?: boolean;
   subscription: Subscription;
 
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter<Task>();
-  constructor(private uiService: UiService, day: string) {
-    this.day = day
+  constructor(private uiService: UiService) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value)=> this.showAddTask = value);

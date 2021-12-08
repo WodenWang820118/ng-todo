@@ -1,6 +1,10 @@
+<!-- the ngSubmit event prevent the default behavior such as POST -->
+<!-- reference: https://stackoverflow.com/questions/41448038/difference-between-angular-submit-and-ngsubmit-events/42086653 -->
 <form *ngIf="showAddTask" action="" class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="text">Task</label>
+        <!-- the ngModel binds the reference value, here binding the reference with "text" -->
+        <!-- reference: https://www.geeksforgeeks.org/angularjs-ng-model-directive/ -->
         <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task">
     </div>
     <div class="form-control">
