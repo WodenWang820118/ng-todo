@@ -1,49 +1,53 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiService } from 'src/app/services/ui.service'; // import the UiService to be mocked
-import { Observable, Subject } from 'rxjs';
-
 import { AddTaskComponent } from './add-task.component';
+import { of } from 'rxjs';
+
+import { render } from '@testing-library/angular';
+import { createMock } from '@testing-library/angular/jest-utils';
+import { UiService } from 'src/app/services/ui.service'; // import the UiService to be mocked
 
 describe('AddTaskComponent', () => {
-  let component: AddTaskComponent;
-  let service: UiService
-  let fixture: ComponentFixture<AddTaskComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      providers: [UiService],
-      declarations: [ AddTaskComponent ]
-    })
-    .compileComponents();
+  it("The form renders with inputs, labels, button", async () => {
+    const uiService = createMock(UiService);
+    uiService.toggleAddTask.mockReturnValue(of(true)); // mock the toggleAddTask method to return true, so the form will be shown
+    
+    // four inputs should be rendered
+    //render the component and access the HTML element
+    const { getByTestId } = await render(AddTaskComponent, {
+      declarations: [UiService],
+      providers: [{ provide: UiService, useValue: uiService }]
+    });
+    // the label
+    expect(getByTestId('label-task')).toBeTruthy();
+    expect(getByTestId('label-time')).toBeTruthy();
+    expect(getByTestId('label-reminder')).toBeTruthy();
+
+    // the inputs
+    expect(getByTestId('input-task')).toBeTruthy();
+    expect(getByTestId('input-time')).toBeTruthy();
+    expect(getByTestId('input-reminder')).toBeTruthy();
+
+    // the button
+    expect(getByTestId('input-save-task')).toBeTruthy();
+
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AddTaskComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  // it("The form submit the data", async () => {
+  //   const uiService = createMock(UiService);
+  //   uiService.onToggle.mockReturnValue(of(true));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  //   const { getByText, getByPlaceholderText, getByTestId } = await render(AddTaskComponent, {
+  //     declarations: [UiService],
+  //     providers: [{ provide: UiService, useValue: uiService }]
+  //   });
+  //   // the input
+  //   getByPlaceholderText('Add Task').innerHTML = 'Learning Angular Testing library';
+  //   getByPlaceholderText('Add Day & TIme').innerHTML = '2022-01-10';
+    
+  //   // getByTestId('reminder').click();
+    
+  //   // the button
+  //   // getByTestId('save-task').click();
+  // })
+})
 
-  it('should use UiService', () => {
-    service = TestBed.inject(UiService);
-    expect(service).toBeTruthy();
-  });
-
-  it('should get the observable from the UiService', () => {
-    service = TestBed.inject(UiService);
-    const subject = spyOn(service, 'onToggle').and.returnValue(new Subject().asObservable());
-    // expect the service to return the subject as an observable
-    // close properly
-    expect(service.onToggle().subscribe((value)=>{
-      expect(value).toBe(subject);
-    }).closed).toBeFalsy();
-  })
-
-  it('should call the onSubmit method when clicks the button', () => {
-    // TODO: how to access the DOM element
-    // console.log(component);
-  })
-});

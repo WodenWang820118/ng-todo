@@ -2,18 +2,18 @@
 <!-- reference: https://stackoverflow.com/questions/41448038/difference-between-angular-submit-and-ngsubmit-events/42086653 -->
 <form *ngIf="showAddTask" action="" class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
-        <label for="text">Task</label>
+        <label for="text" test-id="label-task">Task</label>
         <!-- the ngModel binds the reference value, here binding the reference with "text" -->
         <!-- reference: https://www.geeksforgeeks.org/angularjs-ng-model-directive/ -->
-        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task">
+        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task" test-id="input-task">
     </div>
     <div class="form-control">
-        <label for="day">Day & Time</label>
-        <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time">
+        <label for="day" test-id="label-time">Day & Time</label>
+        <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time" test-id="input-time">
     </div>
     <div class="form-control form-control-check">
-        <label for="reminder">Set Reminder</label>
-        <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder">
+        <label for="reminder" test-id="label-reminder">Set Reminder</label>
+        <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder" test-id="input-reminder">
     </div>
-    <input type="submit" value="Save Task" class="btn" id="submitButton">
+    <input type="submit" value="Save Task" class="btn" id="submitButton" test-id="input-save-task">
 </form>
