@@ -3,6 +3,8 @@ import { of } from 'rxjs';
 
 import { render } from '@testing-library/angular';
 import { createMock } from '@testing-library/angular/jest-utils';
+// see how to use jest and testing-library together:
+// https://www.unicorn-utterances.com/posts/writing-better-angular-tests/
 import { UiService } from 'src/app/services/ui.service'; // import the UiService to be mocked
 
 describe('AddTaskComponent', () => {
@@ -14,8 +16,14 @@ describe('AddTaskComponent', () => {
     // four inputs should be rendered
     //render the component and access the HTML element
     const { getByTestId } = await render(AddTaskComponent, {
-      declarations: [UiService],
-      providers: [{ provide: UiService, useValue: uiService }]
+      componentProviders: [
+        { 
+          provide: UiService,
+          useValue: {
+            toggleAddTask: jest.fn(),
+          } 
+        }
+      ]
     });
     // the label
     expect(getByTestId('label-task')).toBeTruthy();
