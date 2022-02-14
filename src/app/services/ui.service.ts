@@ -18,4 +18,9 @@ export class UiService {
   onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  setAddTask(state: boolean): void {
+    this.showAddTask = state;
+    this.subject.next(this.showAddTask);
+  }
 }

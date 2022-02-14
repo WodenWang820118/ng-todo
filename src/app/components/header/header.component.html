@@ -3,7 +3,8 @@
     <h1>{{ title }}</h1>
     <!-- the btnClick event is defined and output from the button.components.ts -->
     <!-- the toggleAddTask function is defined in the header.components.ts -->
-    <app-button 
+    <app-button
+        data-test-id="btn-add-task"
         *ngIf="hasRoute('/')"
         color="{{ showAddTask ? 'red' : 'green' }}"
         text="{{ showAddTask ? 'Close' : 'Add' }}"

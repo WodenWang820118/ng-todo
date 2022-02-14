@@ -1,19 +1,19 @@
 <!-- the ngSubmit event prevent the default behavior such as POST -->
 <!-- reference: https://stackoverflow.com/questions/41448038/difference-between-angular-submit-and-ngsubmit-events/42086653 -->
-<form *ngIf="showAddTask" action="" class="add-form" (ngSubmit)="onSubmit()">
+<form data-test-id="add-task-form" *ngIf="showAddTask" action="" class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="text" data-testid="label-task">Task</label>
         <!-- the ngModel binds the reference value, here binding the reference with "text" -->
         <!-- reference: https://www.geeksforgeeks.org/angularjs-ng-model-directive/ -->
-        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task" data-testid="input-task">
+        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task" data-test-id="input-task">
     </div>
     <div class="form-control">
-        <label for="day" data-testid="label-time">Day & Time</label>
-        <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time" data-testid="input-time">
+        <label for="day" data-test-id="label-time">Day & Time</label>
+        <input data-test-id="input-time" type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time">
     </div>
     <div class="form-control form-control-check">
-        <label for="reminder" data-testid="label-reminder">Set Reminder</label>
-        <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder" data-testid="input-reminder">
+        <label for="reminder" data-test-id="label-reminder">Set Reminder</label>
+        <input data-test-id="input-reminder" type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder" >
     </div>
-    <input type="submit" value="Save Task" class="btn" id="submitButton" data-testid="input-save-task">
+    <input data-test-id="input-save-task" type="submit" value="Save Task" class="btn" id="submitButton">
 </form>

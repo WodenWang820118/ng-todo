@@ -1,4 +1,5 @@
-<div [ngClass]="{ reminder: task.reminder }"
+<div data-test-id="task-card"
+    [ngClass]="{ reminder: task.reminder }"
     class="task"
     (dblclick)="onToggle(task)"
     >
@@ -6,6 +7,7 @@
     <h3>{{ task.text }}
     <!-- the event and function definition are in the typescript file -->
     <fa-icon
+        data-test-id="delete-task"
         (click)="onDelete(task)"
         [ngStyle]="{'color':'red'}" [icon]="faTimes">
     </fa-icon>
