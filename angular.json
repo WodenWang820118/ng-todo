@@ -22,13 +22,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -68,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-crash:build:production"
+              "buildTarget": "angular-crash:build:production"
             },
             "development": {
-              "browserTarget": "angular-crash:build:development"
+              "buildTarget": "angular-crash:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-crash:build"
+            "buildTarget": "angular-crash:build"
           }
         },
         "test": {
@@ -119,5 +114,7 @@
       }
     }
   },
-  "defaultProject": "angular-crash"
+  "cli": {
+    "analytics": false
+  }
 }
