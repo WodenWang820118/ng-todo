@@ -1,1 +1,0 @@
-ng test --run-tests-by-path "src\app\components\add-task\add-task.component.spec.ts" for example to run only the test for add-task.component.spec.ts
