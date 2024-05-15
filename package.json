@@ -1,14 +1,12 @@
 {
-  "name": "angular-crash",
+  "name": "ng-todo-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "jest --coverage --config ./jest.config.js",
-    "test:watch": "jest -o --watch --config ./jest.config.js",
+    "build": "ng build --configuration production --optimization",
     "server": "json-server --watch db.json --port 5000",
+    "bundle-ng-frontend-report": "ng build --configuration development --source-map && source-map-explorer dist/ng-todo-app/browser/*.js",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
@@ -23,7 +21,7 @@
     "@angular/platform-browser": "^17.3.8",
     "@angular/platform-browser-dynamic": "^17.3.8",
     "@angular/router": "^17.3.8",
-    "@fortawesome/angular-fontawesome": "^0.10.1",
+    "@fortawesome/angular-fontawesome": "^0.14.1",
     "@fortawesome/fontawesome-svg-core": "~1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -45,6 +43,7 @@
     "cypress": "latest",
     "jest": "^29.7.0",
     "jest-preset-angular": "^11.0.1",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~5.4.5"
   }
 }
