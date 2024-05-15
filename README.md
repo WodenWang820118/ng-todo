@@ -8,3 +8,4 @@ The application is the practice of to-do app lists using Angular. It is initiall
 4. Basic routing.
 5. Basic HTTP request, response with `HttpClient` module in any kind of `services`; the `Observable` and the `Subscription` pattern to handle the response.
 6. Basic custom event handling with `EventEmitter` and `Output` in the `component`, and how the event is passed and dealt with parent component with `services`.
+7. Architecture of Angular: `module`, `component`, `service`, `routing`, and folder structure.

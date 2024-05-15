@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production --optimization",
     "server": "json-server --watch db.json --port 5000",
-    "bundle-ng-frontend-report": "ng build --configuration development --source-map && source-map-explorer dist/ng-todo-app/browser/*.js",
+    "bundle-ng-frontend-report": "ng build --configuration production --source-map && source-map-explorer dist/ng-todo-app/browser/*.js",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"

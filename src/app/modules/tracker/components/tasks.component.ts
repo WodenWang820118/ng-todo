@@ -1,9 +1,9 @@
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
-import { TaskService } from 'src/app/services/task.service';
-import { Task } from '../interfaces/task.interface';
-import { TaskItemComponent } from '../components/task-item.component';
+import { TaskService } from 'src/app/shared/services/task.service';
+import { Task } from '../../../interfaces/task.interface';
+import { TaskItemComponent } from './task-item.component';
 
 @Component({
   selector: 'app-tasks',
