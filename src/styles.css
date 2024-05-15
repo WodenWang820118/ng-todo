@@ -29,8 +29,10 @@ body {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   font-size: 15px;
   font-family: inherit;
+  max-width: 120px;
 }
 .btn:focus {
   outline: none;
@@ -42,6 +44,10 @@ body {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.cancel {
+  background: #ff0000;
 }
 
 .form-control {
