@@ -1,11 +1,14 @@
-import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { TaskFormComponent } from '../components/task-form.component';
+import { FooterComponent } from 'src/app/shared/components/footer.component';
 
 @Component({
   selector: 'app-add-task-view',
   standalone: true,
-  imports: [AsyncPipe, TaskFormComponent],
-  template: ` <app-task-form></app-task-form> `,
+  imports: [TaskFormComponent, FooterComponent],
+  template: `
+    <app-task-form></app-task-form>
+    <app-footer></app-footer>
+  `,
 })
 export class AddTaskViewComponent {}
