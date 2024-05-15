@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { Task } from '../interfaces/task.interface';
+import { Task } from '../../../interfaces/task.interface';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { TaskService } from '../services/task.service';
+import { TaskService } from '../../../shared/services/task.service';
 
 @Component({
   selector: 'app-task-form',
   standalone: true,
-  imports: [AsyncPipe, FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   template: `
     <form
       [formGroup]="taskForm"

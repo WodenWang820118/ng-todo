@@ -1,10 +1,19 @@
 import { Routes } from '@angular/router';
-import { TrackerViewComponent } from './views/tracker-view.component';
-import { AboutViewComponent } from './views/about-view.component';
-import { AddTaskViewComponent } from './views/add-task-view.component';
 
 export const APP_ROUTES: Routes = [
-  { path: '', component: TrackerViewComponent },
-  { path: 'add-task', component: AddTaskViewComponent },
-  { path: 'about', component: AboutViewComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/tracker/routes').then((m) => m.TRACKER_ROUTES),
+  },
+  {
+    path: 'add-task',
+    loadChildren: () =>
+      import('./modules/add-task/routes').then((m) => m.ADD_TASK_ROUTES),
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./modules/about/routes').then((m) => m.ABOUT_ROUTES),
+  },
 ];

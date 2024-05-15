@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '../interfaces/task.interface';
+import { Task } from '../../../interfaces/task.interface';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { NgClass, NgStyle } from '@angular/common';
-import { TaskService } from '../services/task.service';
+import { TaskService } from '../../../shared/services/task.service';
 import { take, tap } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
