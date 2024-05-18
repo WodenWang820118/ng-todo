@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskFormComponent } from '../components/task-form.component';
-import { FooterComponent } from 'src/app/shared/components/footer.component';
+import { FooterComponent } from '../../../shared/components/footer.component';
 
 @Component({
   selector: 'app-add-task-view',
