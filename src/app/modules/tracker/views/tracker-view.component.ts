@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TasksComponent } from '../components/tasks.component';
-import { HeaderComponent } from 'src/app/shared/components/header.component';
-import { FooterComponent } from 'src/app/shared/components/footer.component';
+import { HeaderComponent } from '../../../shared/components/header.component';
+import { FooterComponent } from '../../../shared/components/footer.component';
 
 @Component({
   selector: 'app-tracker-view',
