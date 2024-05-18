@@ -1,11 +1,10 @@
 # Overview
 
-The application is the practice of to-do app lists using Angular. It is initially created by [Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&ab_channel=TraversyMedia). The purpose of the repository is to familiarize the basics of Angular, such as:
+The application is the practice of to-do app lists using Angular. It is initially created by [Traversy Media](https://www.youtube.com/watch?v=3dHNOWTI7H8&ab_channel=TraversyMedia). The purpose of the repository is to showcase the basic understanding of Angular framework and TypeScript.
 
-1. Typescript with class instances component.
-2. Passing properties to the child component.
-3. Basic framework shorthand form directive: *ngIf, *ngFor="[let item in items]" syntax.
-4. Basic routing.
-5. Basic HTTP request, response with `HttpClient` module in any kind of `services`; the `Observable` and the `Subscription` pattern to handle the response.
-6. Basic custom event handling with `EventEmitter` and `Output` in the `component`, and how the event is passed and dealt with parent component with `services`.
-7. Architecture of Angular: `module`, `component`, `service`, `routing`, and folder structure.
+# Objectives
+
+- Showcase basic concepts of the Angular framework.
+- Showcase the reactivity of Angular with RxJS and Angular Async pipe.
+- Showcase the use of Angular service with its dependency injection.
+- Showcase the folder structure of the Angular application and how it optimizes the initial bundle size.
