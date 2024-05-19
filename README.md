@@ -8,3 +8,10 @@ The application is the practice of to-do app lists using Angular. It is initiall
 - Showcase the reactivity of Angular with RxJS and Angular Async pipe.
 - Showcase the use of Angular service with its dependency injection.
 - Showcase the folder structure of the Angular application and how it optimizes the initial bundle size.
+
+## Development
+
+- `npm install` to install all the dependencies.
+- `ng serve` to run the development server.
+- `npm run server` to run the JSON server.
+- `npm run build` to build the project.
